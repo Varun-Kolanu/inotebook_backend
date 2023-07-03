@@ -87,9 +87,9 @@ router.post('/login', [
 })
 
 //* ROUTE 3: Get user by /api/v1/auth/getuser
-router.get('/getuser', fetchUser, async (req, res) => {
+router.post('/getuser', fetchUser, async (req, res) => {
     try {
-        const userId = req.data
+        const userId = req.userId
         const user = await User.findById(userId).select("-password")
         res.status(200).json(user)
     } catch (error) {

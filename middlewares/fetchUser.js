@@ -11,8 +11,9 @@ const fetchUser = (req, res, next) => {
         })
     }
     try {
-        const data = jwt.verify(jwtToken, jwt_secret)
-        req.data = data
+        const userId = jwt.verify(jwtToken, jwt_secret)
+        req.userId = userId
+        //* Here jwt.verify() returns the id directly rather than returning the object
         next()
     } catch (error) {
         return res.status(401).json({
