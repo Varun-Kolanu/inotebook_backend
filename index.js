@@ -4,7 +4,7 @@ import AuthRouter from "./routes/Auth.js";
 import NotesRouter from "./routes/Notes.js";
 
 const app = express();
-const port = 8000
+const port = 5000
 
 connectToMongo()
 //Middlewares
